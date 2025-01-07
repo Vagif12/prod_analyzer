@@ -17,8 +17,8 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 splitter2 = RecursiveCharacterTextSplitter(chunk_size=1000)
 
 
-wcd_url = "https://3sk8vbftgcnquspnykmrq.c0.europe-west3.gcp.weaviate.cloud"
-wcd_api_key = "VvEwkVm3Z9kSvbOPPPK0qnwsXJXbsgHeVx6O"
+wcd_url = os.environ["WEAVIATE_URL"]
+wcd_api_key = os.environ["WEAVIATE_KEY"]
 
 connection = weaviate.connect_to_weaviate_cloud(
     cluster_url=wcd_url,  # Replace with your Weaviate Cloud URL
